@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<link href='/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -16,7 +16,9 @@
 
 <input id="jsonInput" list="jsonUrlList" name="jsonInput" value="data/gookey.json"/>
 <datalist id="jsonUrlList">
+  <option value="data/gookey.json">
   <option value="data/common-words.json">
+  <option label="some musicians" value="https://cdn.rawgit.com/jasonbaldridge/2668632/raw/e56320c485a33c339791a25cc107bf70e7f1d763/music.json">
 </datalist>
 
 <textarea id="jsonText" rows="2" cols="8">
@@ -68,7 +70,7 @@ function rush(){
     };
 	
 var req = new XMLHttpRequest();
-    req.open("GET", "gookey.json", true);
+    req.open("GET", "data/gookey.json", true);
 	//req.responseType="json";
     req.onload = function(){
 		var json = JSON.parse(req.response);		
