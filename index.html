@@ -22,17 +22,22 @@
 </datalist>
 
 <textarea id="jsonText" rows="2" cols="8">
-{"json":"data","free domain":["http://%s.ml"]}
+{"json":"data","free domain":["http://%s.tk"]}
 </textarea>
 <button onclick="editor.set(JSON.parse(document.getElementById('jsonText').value))">Load</button>
 <input id="mouseoverFlag" type="checkbox" checked>onmouseover</checkbox>
-<input list="urllist" name="urlInput" id="urlInput" value="https://www.google.com.hk/search?q=%s"/>
+<input list="urllist" name="urlInput" id="urlInput" value="https://www.bing.com/search?q=%s"/>
 <datalist id="urllist">
   <option value="https://www.google.com/search?q=%s">
-  <option value="http://%s.com">
+  <option value="http://www.%s.com">
+  <option value="http://www.%s.cn">
+  <option value="http://%s.us">
+  <option value="http://%s.net">
+  <option value="https://scholar.google.com/scholar?q=%s">
+  <option value="http://academic.research.microsoft.com/Search?query=%s">
   <option value="https://www.bing.com/search?q=%s">
   <option value="https://www.bing.com/dict/search?q=%s">
-  <option value="http://%s.tk">
+  <option value="http://%s.ml">
 </datalist>
 <div id="gookey"></div>
 <script>
