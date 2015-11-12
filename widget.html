@@ -14,7 +14,7 @@
 	</header>
 <hr>
 
-<input id="jsonInput" list="jsonUrlList" name="jsonInput" value=""/>
+<input id="jsonInput" list="jsonUrlList" name="jsonInput" value="data/gookey.json"/>
 <datalist id="jsonUrlList">
   <option value="data/gookey.json">
   <option value="data/common-words.json">
@@ -25,8 +25,7 @@
 {"json":"data","free domain":["http://%s.tk"]}
 </textarea>
 <button onclick="editor.set(JSON.parse(document.getElementById('jsonText').value))">Load</button>
-<input id="mouseoverFlag" type="checkbox" checked accesskey="m" title="accesskey: M">onmouseover</checkbox>
-<input id="popupFlag" type="checkbox" checked accesskey="p" title="accesskey: P">popup</checkbox>
+<input id="mouseoverFlag" type="checkbox" checked>onmouseover</checkbox>
 <input list="urllist" name="urlInput" id="urlInput" value="https://www.bing.com/search?q=%s"/>
 <datalist id="urllist">
   <option value="https://www.google.com/search?q=%s">
@@ -40,13 +39,7 @@
   <option value="https://www.bing.com/dict/search?q=%s">
   <option value="http://%s.ml">
 </datalist>
-
-<div>
-<div id="gookey" style="float:left"></div>
-<div id="widget"  style="float:left"><SCRIPT charset="utf-8" type="text/javascript" src="http://ws-cn.amazon-adsystem.com/widgets/q?rt=tf_sw&ServiceVersion=20070822&MarketPlace=CN&ID=V20070822%2FCN%2Faboy07-23%2F8002%2Fb9b00fc7-3d93-443e-8f6d-6c7141e2e408"> </SCRIPT> <NOSCRIPT><A rel="nofollow" HREF="http://ws-cn.amazon-adsystem.com/widgets/q?rt=tf_sw&ServiceVersion=20070822&MarketPlace=CN&ID=V20070822%2FCN%2Faboy07-23%2F8002%2Fb9b00fc7-3d93-443e-8f6d-6c7141e2e408&Operation=NoScript">Amazon.cn Widgets</A></NOSCRIPT>
-</div>
-</div>
-
+<div id="gookey"></div>
 <script>
 var container = document.getElementById("gookey");
 var editor;
@@ -66,22 +59,14 @@ function rush(){
 									document.getElementById("urlInput").value=selhtml;
 									
 								}else{
-									//console.log(selhtml);
-									if(document.getElementById("popupFlag").checked){
-										rushwin = window.open(selhtml,'RushWindow')
-									}
+								//console.log(selhtml);
+								rushwin = window.open(selhtml,'RushWindow');
 								};
 							}else{						
 								//console.log(selhtml);
-								if((amzn_search=document.getElementById("amzn_search_textfield")) &&(amzn_go=document.querySelector('#amzn_search_textfield ~ input[type="image"]'))){
-									amzn_search.value=selhtml;
-									amzn_go.click()
-								}
-								if(document.getElementById("popupFlag").checked){
-									var url= document.getElementById("urlInput").value.replace("%s",selhtml);
-									rushwin = window.open(url,'RushWindow');
-									//gs.execute(selhtml);
-								}
+								var url= document.getElementById("urlInput").value.replace("%s",selhtml);
+								rushwin = window.open(url,'RushWindow');
+								//gs.execute(selhtml);
 							}
                         }
                     },
@@ -90,7 +75,7 @@ function rush(){
     };
 	
 var req = new XMLHttpRequest();
-    req.open("GET", "data/amazon_cn.json", true);
+    req.open("GET", "data/gookey.json", true);
 	//req.responseType="json";
     req.onload = function(){
 		var json = JSON.parse(req.response);		
@@ -114,7 +99,6 @@ var req = new XMLHttpRequest();
 </script>
 
 <footer>
-<p>Tip: use Win+→ Win+← to arrange your window!</p>
 <a href="data/gookey.json" target="_blank">gookey.json</a>
 <a href="https://github.com/a-boy/rush">github.com/a-boy/rush</a></footer>
 </body>
