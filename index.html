@@ -13,7 +13,6 @@
         -- A new way of browsing and remembering 一种新的博览与记忆的方式
     </nav>
 </header>
-<hr>
 <!-- Start of adf.ly banner code --><a href="http://adf.ly/?id=4536184"><img border="0"
                                                                              src="https://cdn.adf.ly/images/banners/adfly.350x19.1.png"
                                                                              width="350" height="19"
@@ -23,8 +22,6 @@
        onchange="this.checked? container.addEventListener('mouseover',rush ,false) : container.removeEventListener('mouseover',rush ,false) ">onMouseover
 <input id="popupFlag" type="checkbox" accesskey="p" title="accesskey: P">Popup
 <input list="urllist" name="urlInput" id="urlInput" value="https://www.bing.com/search?q=%s"/>
-<input id="fixedWidget" type="checkbox" accesskey="F" title="accesskey: F"
-       onchange="var widget=document.getElementById('widget');if(this.checked){widget.style.top='55pt';widget.style.left='242pt';widget.style.position='fixed'}else{widget.style.position='static'}">Fixed
 <datalist id="urllist">
     <option value="https://www.google.com/search?q=%s">
     <option value="http://www.%s.com">
@@ -37,7 +34,9 @@
     <option value="https://www.bing.com/dict/search?q=%s">
     <option value="http://%s.ml">
 </datalist>
-
+<input id="fixedWidget" type="checkbox" accesskey="F" title="accesskey: F"
+       onchange="var widget=document.getElementById('widget');if(this.checked){widget.style.top='55pt';widget.style.left='242pt';widget.style.position='fixed'}else{widget.style.position='static'}">Fixed
+<br>
 <input id="jsonInput" list="jsonUrlList" name="jsonInput" value=""/>
 <datalist id="jsonUrlList">
     <option value="data/gookey.json">
